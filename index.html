@@ -141,6 +141,8 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
             Home
           </a>
         </li>
@@ -148,6 +150,8 @@
         
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
             
             Categories
           </a>
@@ -157,6 +161,8 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
             Archives
           </a>
         </li>
@@ -165,6 +171,8 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
             Tags
           </a>
         </li>
@@ -172,6 +180,8 @@
         
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
             
             About
           </a>
@@ -194,6 +204,142 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/31/React系列学习笔记之表单详解/" itemprop="url">
+                  React系列学习笔记之表单详解
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-05-31T21:44:49+08:00" content="2016-05-31">
+              2016-05-31
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Tech-study/" itemprop="url" rel="index">
+                    <span itemprop="name">Tech-study</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/31/React系列学习笔记之表单详解/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/31/React系列学习笔记之表单详解/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<blockquote>
+<p><strong>1. 可控组件和不可控组件</strong><br><strong>2. 不同表单元素的使用</strong><br><strong>3. 如何复用事件处理函数</strong></p>
+</blockquote>
+<p> <strong>1.1 不可控组件</strong><br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">"text"</span> defaultValue=<span class="string">"Hello World!"</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<p>前面这个简单的input组件<strong>[react中有两大类组件，一类是自定义的组件，另一类是原生的HTML标签]</strong>就是一个不可控组件。</p>
+<p>因为组件中的数据和state中的数据不再对应，而是写死在了组件中。组件中的数据对整个组件来说是不可控的。</p>
+<p>不可控组件组件下，如果我们要获取到<code>defaultValue</code>的值，就必须得去操作真实的DOM.<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">"text"</span> ref=<span class="string">"hello"</span> defaultValue=<span class="string">"Hello World!"</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> inputValue = React.findDOMNode(<span class="keyword">this</span>.refs.hello).value;</span><br></pre></td></tr></table></figure>
+<p>给组件添加<code>ref</code>属性，然后通过<code>React.findDOMNode()</code>找到对应的节点。</p>
+<p> <strong>1.2 可控组件</strong><br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">getInitialState: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        hello: <span class="string">"Hello World!"</span></span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">"text"</span> ref=<span class="string">"hello"</span> value=&#123;<span class="keyword">this</span>.state.hello&#125;&gt;</span><br></pre></td></tr></table></figure>
+<p>上面这个就是可控组件，数据存储在state中，便于使用，读取的是JS对象而不是DOM节点。符合reac单向数据流的特点，数据从state–&gt;render。<br>使用可控组件可以方便的对数据进行处理，比如在handleChange里面可以对数据进行方便的操作。</p>
+<p> <strong>2. 不同表单元素的使用</strong><br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;label htmlFor=<span class="string">"name"</span> className=<span class="string">"name"</span>&gt;name&lt;label&gt;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">"checkbox"</span> <span class="comment">/* "radio" "text"*/</span></span><br><span class="line">       value=<span class="string">"A"</span></span><br><span class="line">       checked=&#123;<span class="keyword">this</span>.state.checked&#125;</span><br><span class="line">       onchange=&#123;<span class="keyword">this</span>.handleChange&#125; /&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;textarea value=<span class="string">"A"</span> rows=<span class="string">"10"</span> cols=<span class="string">"30"</span></span><br><span class="line">          onChange=&#123;<span class="keyword">this</span>.handleChange&#125; /&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;select value=&#123;this.state.hello&#125;</span><br><span class="line">        onChange=&#123;this.handleChange&#125;&gt;</span><br><span class="line">    &lt;option value="one"&gt;一&lt;/option&gt;</span><br><span class="line">    &lt;option value="two"&gt;二&lt;/option&gt;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+<p>说明一下上面select的value是每次被选中option的value</p>
+<p><strong>3. 如何复用事件处理函数</strong><br>事件函数的可以有<code>bind</code>和<code>name</code>复用两种<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">handleChange(name, event)&#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">&lt;input type=<span class="string">"text"</span> onChange=&#123;<span class="keyword">this</span>.handleChange.bind(<span class="keyword">this</span>, <span class="string">`input1`</span>)&#125;&gt;</span><br><span class="line">&lt;input type="text" onChange=&#123;this.handleChange.bind(this, `input2`)&#125;&gt;</span><br></pre></td></tr></table></figure></p>
+<p><code>bind</code>每次将第二参数传给handleChange的name,这样每次调用handleChange，就可以分辨出是哪个input发生了变化。<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">handleChange(name,event)&#123;</span><br><span class="line">    <span class="keyword">var</span> name = event.target.name;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">&lt;input type=<span class="string">"text"</span> name=<span class="string">"input1"</span> onChange=&#123;<span class="keyword">this</span>.handleChange&#125;&gt;</span><br><span class="line">&lt;input type="text" name="input2" onChange=&#123;this.handleChange&#125;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>给input添加name属性，每次在handleChange中获取目标事件的name，确定要处理的input.达到复用事件处理函数。</p>
+<p>两种方法都可以复用事件处理函数。不过通过name实现的复用性能比bind实现的低。前者每次都会在事件处理函数中获取一次name的值，后者直接在参数中直接传入。推荐使用bind.</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
       
 
@@ -480,7 +626,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -497,7 +643,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
