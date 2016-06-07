@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="react," />
+  <meta name="keywords" content="JS," />
 
 
 
@@ -57,28 +57,31 @@
 
 
 
-<meta name="description" content="1. 可控组件和不可控组件2. 不同表单元素的使用3. 如何复用事件处理函数
+<meta name="description" content="1.generator函数简介
 
- 1.1 不可控组件1&amp;lt;input type=&quot;text&quot; defaultValue=&quot;Hello World!&quot;&amp;gt;
-前面这个简单的input组件[react中有两大类组件，一类是自定义的组件，另一类是原生的HTML标签]就是一个不可控组件。
-因为组件中的数据和state中的数据不再对应，而是写死在了组">
+两个角度理解：1.它是一个状态机，函数内部封装了多个状态。2.执行generator函数会返回一个遍历器对象，可以遍历内部的每一个对象
+
+12node test&amp;#123;&amp;#125;  //遍历器对象
+test.js1234567function* helloGenerator() &amp;#123;	yield &apos;hello&apos;;	yield &apos;world&apos;;	re">
 <meta property="og:type" content="article">
-<meta property="og:title" content="React系列学习笔记之表单详解">
-<meta property="og:url" content="http://yoursite.com/2016/05/31/React系列学习笔记之表单详解/index.html">
+<meta property="og:title" content="Generator函数">
+<meta property="og:url" content="http://yoursite.com/2016/06/07/Generator函数/index.html">
 <meta property="og:site_name" content="jarbinup's Notes">
-<meta property="og:description" content="1. 可控组件和不可控组件2. 不同表单元素的使用3. 如何复用事件处理函数
+<meta property="og:description" content="1.generator函数简介
 
- 1.1 不可控组件1&amp;lt;input type=&quot;text&quot; defaultValue=&quot;Hello World!&quot;&amp;gt;
-前面这个简单的input组件[react中有两大类组件，一类是自定义的组件，另一类是原生的HTML标签]就是一个不可控组件。
-因为组件中的数据和state中的数据不再对应，而是写死在了组">
-<meta property="og:updated_time" content="2016-05-31T14:13:18.168Z">
+两个角度理解：1.它是一个状态机，函数内部封装了多个状态。2.执行generator函数会返回一个遍历器对象，可以遍历内部的每一个对象
+
+12node test&amp;#123;&amp;#125;  //遍历器对象
+test.js1234567function* helloGenerator() &amp;#123;	yield &apos;hello&apos;;	yield &apos;world&apos;;	re">
+<meta property="og:updated_time" content="2016-06-07T05:10:53.619Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React系列学习笔记之表单详解">
-<meta name="twitter:description" content="1. 可控组件和不可控组件2. 不同表单元素的使用3. 如何复用事件处理函数
+<meta name="twitter:title" content="Generator函数">
+<meta name="twitter:description" content="1.generator函数简介
 
- 1.1 不可控组件1&amp;lt;input type=&quot;text&quot; defaultValue=&quot;Hello World!&quot;&amp;gt;
-前面这个简单的input组件[react中有两大类组件，一类是自定义的组件，另一类是原生的HTML标签]就是一个不可控组件。
-因为组件中的数据和state中的数据不再对应，而是写死在了组">
+两个角度理解：1.它是一个状态机，函数内部封装了多个状态。2.执行generator函数会返回一个遍历器对象，可以遍历内部的每一个对象
+
+12node test&amp;#123;&amp;#125;  //遍历器对象
+test.js1234567function* helloGenerator() &amp;#123;	yield &apos;hello&apos;;	yield &apos;world&apos;;	re">
 
 
 
@@ -96,7 +99,7 @@
   };
 </script>
 
-  <title> React系列学习笔记之表单详解 | jarbinup's Notes </title>
+  <title> Generator函数 | jarbinup's Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -236,7 +239,7 @@
             
             
               
-                React系列学习笔记之表单详解
+                Generator函数
               
             
           </h1>
@@ -248,8 +251,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-05-31T21:44:49+08:00" content="2016-05-31">
-              2016-05-31
+            <time itemprop="dateCreated" datetime="2016-06-07T13:07:07+08:00" content="2016-06-07">
+              2016-06-07
             </time>
           </span>
 
@@ -278,8 +281,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/31/React系列学习笔记之表单详解/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/31/React系列学习笔记之表单详解/" itemprop="commentsCount"></span>
+                <a href="/2016/06/07/Generator函数/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/07/Generator函数/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -302,27 +305,29 @@
 
       
         <hr>
+<p><strong>1.generator函数简介</strong></p>
 <blockquote>
-<p><strong>1. 可控组件和不可控组件</strong><br><strong>2. 不同表单元素的使用</strong><br><strong>3. 如何复用事件处理函数</strong></p>
+<p>两个角度理解：<br>1.它是一个状态机，函数内部封装了多个状态。<br>2.执行generator函数会返回一个遍历器对象，可以遍历内部的每一个对象</p>
 </blockquote>
-<p> <strong>1.1 不可控组件</strong><br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">"text"</span> defaultValue=<span class="string">"Hello World!"</span>&gt;</span><br></pre></td></tr></table></figure></p>
-<p>前面这个简单的input组件<strong>[react中有两大类组件，一类是自定义的组件，另一类是原生的HTML标签]</strong>就是一个不可控组件。</p>
-<p>因为组件中的数据和state中的数据不再对应，而是写死在了组件中。组件中的数据对整个组件来说是不可控的。</p>
-<p>不可控组件组件下，如果我们要获取到<code>defaultValue</code>的值，就必须得去操作真实的DOM.<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">"text"</span> ref=<span class="string">"hello"</span> defaultValue=<span class="string">"Hello World!"</span>&gt;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> inputValue = React.findDOMNode(<span class="keyword">this</span>.refs.hello).value;</span><br></pre></td></tr></table></figure>
-<p>给组件添加<code>ref</code>属性，然后通过<code>React.findDOMNode()</code>找到对应的节点。</p>
-<p> <strong>1.2 可控组件</strong><br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">getInitialState: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        hello: <span class="string">"Hello World!"</span></span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">"text"</span> ref=<span class="string">"hello"</span> value=&#123;<span class="keyword">this</span>.state.hello&#125;&gt;</span><br></pre></td></tr></table></figure>
-<p>上面这个就是可控组件，数据存储在state中，便于使用，读取的是JS对象而不是DOM节点。符合reac单向数据流的特点，数据从state–&gt;render。<br>使用可控组件可以方便的对数据进行处理，比如在handleChange里面可以对数据进行方便的操作。</p>
-<p> <strong>2. 不同表单元素的使用</strong><br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;label htmlFor=<span class="string">"name"</span> className=<span class="string">"name"</span>&gt;name&lt;label&gt;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">"checkbox"</span> <span class="comment">/* "radio" "text"*/</span></span><br><span class="line">       value=<span class="string">"A"</span></span><br><span class="line">       checked=&#123;<span class="keyword">this</span>.state.checked&#125;</span><br><span class="line">       onchange=&#123;<span class="keyword">this</span>.handleChange&#125; /&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;textarea value=<span class="string">"A"</span> rows=<span class="string">"10"</span> cols=<span class="string">"30"</span></span><br><span class="line">          onChange=&#123;<span class="keyword">this</span>.handleChange&#125; /&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;select value=&#123;this.state.hello&#125;</span><br><span class="line">        onChange=&#123;this.handleChange&#125;&gt;</span><br><span class="line">    &lt;option value="one"&gt;一&lt;/option&gt;</span><br><span class="line">    &lt;option value="two"&gt;二&lt;/option&gt;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
-<p>说明一下上面select的value是每次被选中option的value</p>
-<p><strong>3. 如何复用事件处理函数</strong><br>事件函数的可以有<code>bind</code>和<code>name</code>复用两种<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">handleChange(name, event)&#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">&lt;input type=<span class="string">"text"</span> onChange=&#123;<span class="keyword">this</span>.handleChange.bind(<span class="keyword">this</span>, <span class="string">`input1`</span>)&#125;&gt;</span><br><span class="line">&lt;input type="text" onChange=&#123;this.handleChange.bind(this, `input2`)&#125;&gt;</span><br></pre></td></tr></table></figure></p>
-<p><code>bind</code>每次将第二参数传给handleChange的name,这样每次调用handleChange，就可以分辨出是哪个input发生了变化。<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">handleChange(name,event)&#123;</span><br><span class="line">    <span class="keyword">var</span> name = event.target.name;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">&lt;input type=<span class="string">"text"</span> name=<span class="string">"input1"</span> onChange=&#123;<span class="keyword">this</span>.handleChange&#125;&gt;</span><br><span class="line">&lt;input type="text" name="input2" onChange=&#123;this.handleChange&#125;&gt;</span><br></pre></td></tr></table></figure></p>
-<p>给input添加name属性，每次在handleChange中获取目标事件的name，确定要处理的input.达到复用事件处理函数。</p>
-<p>两种方法都可以复用事件处理函数。不过通过name实现的复用性能比bind实现的低。前者每次都会在事件处理函数中获取一次name的值，后者直接在参数中直接传入。推荐使用bind.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node test</span><br><span class="line">&#123;&#125;  <span class="comment">//遍历器对象</span></span><br></pre></td></tr></table></figure>
+<p>test.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">helloGenerator</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">yield</span> <span class="string">'hello'</span>;</span><br><span class="line">	<span class="keyword">yield</span> <span class="string">'world'</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="string">'ending'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> hg = helloGenerator();</span><br><span class="line"><span class="built_in">console</span>.log(hg.next());</span><br></pre></td></tr></table></figure></p>
+<p>注意是<code>yield语句</code>,后面加<code>;</code>而不是<code>,</code><br><code>next()</code>方法会返回一个对象。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; value: <span class="string">'hello'</span>, done: <span class="literal">false</span> &#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>2.yield语句</strong><br>generator实际上提供了一种可以暂时执行的函数，yield语句就是暂停标志。</p>
+<p>yield语句与return语句的相似之处在于都可以返回紧跟在语句后的表达式的值；区别在于yield语句具有位置记忆的功能，每次遇到yield语句，下一次会从该位置继续执行。一个函数里面只能执行一个return语句，但可以执行多个yield语句</p>
+<p><strong>yield语句不能在普通函数中使用，否则会报错。</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">yield</span> <span class="number">1</span>;</span><br><span class="line">&#125;)()</span><br><span class="line"><span class="comment">// Unexpected number</span></span><br></pre></td></tr></table></figure></p>
+<p>用generator函数取出嵌套结构中的数组<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, [<span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>]], <span class="number">5</span>, <span class="number">6</span>];</span><br><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">flat</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> length = a.length;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; length; i++) &#123;</span><br><span class="line">        <span class="keyword">var</span> item = a[i];</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">typeof</span> item !== <span class="string">'number'</span>) &#123;</span><br><span class="line">            <span class="keyword">yield</span>* flat(item);</span><br><span class="line">            <span class="comment">// for(let v of flat(item))&#123;</span></span><br><span class="line">            <span class="comment">//     yield v;</span></span><br><span class="line">            <span class="comment">// &#125;</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">yield</span> item;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> f <span class="keyword">of</span> flat(arr)) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(f);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 1, 2, 3, 4, 5, 6</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>generator函数如果放在用在一个表达式中，必须放在圆括号里面</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'Hello'</span> + <span class="keyword">yield</span>); <span class="comment">// SyntaxError</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Hello'</span> + (<span class="keyword">yield</span>)); <span class="comment">// OK</span></span><br></pre></td></tr></table></figure></p>
+<p>当用作函数参数或用于赋值 表达式的右边，可以不加括号<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">foo(<span class="keyword">yield</span> <span class="string">'a'</span>, <span class="keyword">yield</span> <span class="string">'b'</span>); <span class="comment">//OK</span></span><br><span class="line"><span class="keyword">let</span> input = <span class="keyword">yield</span>; <span class="comment">//OK</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>yield*语句</strong>，用来在一个generator函数里面执行另外一个generator函数。等同于在Generator函数内部部署了一个for…of循环。<br><strong>3.与Iterator接口的关系</strong><br><code>Symbol.iterator</code>方法是对象的<code>遍历器对象</code>生成函数。调用该函数会返回该对象的一个遍历器对象。<br>遍历器对象本身也有<code>Symbol.iterator</code>方法，执行后返回它本身。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">gen</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//...some code</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> g = gen();</span><br><span class="line"></span><br><span class="line">g[<span class="built_in">Symbol</span>.iterator]() === g;</span><br><span class="line"><span class="comment">//true</span></span><br></pre></td></tr></table></figure></p>
+<p>前面提到过，直接执行generator函数会返回一个遍历器对象。调用这个遍历器对象的<code>Symbol.iterator</code>方法，返回它本身。</p>
+<p><strong>4.next方法与参数</strong><br>yield函数本身没有参数。或者说总是返回undefined。next方法可以带一个参数，该参数会被当作上一条yield语句的返回值。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; <span class="literal">true</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">var</span> reset = <span class="keyword">yield</span> i;</span><br><span class="line">        <span class="keyword">if</span>(reset) &#123; </span><br><span class="line">            i = <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> g = f();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(g.next());</span><br><span class="line"><span class="built_in">console</span>.log(g.next());</span><br><span class="line"><span class="built_in">console</span>.log(g.next(<span class="literal">true</span>));</span><br><span class="line"><span class="comment">//&#123; value: 0, done: false &#125;</span></span><br><span class="line"><span class="comment">//&#123; value: 1, done: false &#125;</span></span><br><span class="line"><span class="comment">//&#123; value: 0, done: false &#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>当next带参数true,ture会被传递给上一个yield语句的返回值,i的值也相应的重置为-1。</p>
+<p>通过next方法的参数，可以在Generator函数运行的不同阶段，从外部向内部注入不同的值，从而<strong>调整</strong>函数的行为。</p>
+<p>由于next方法的参数表示上一条yield语句的返回值，所以第一次调用next方法不能带有参数。从语义上来讲第一条yield语句用来启动遍历器对象，所以不能带有参数。<br><strong>5.for…of循环</strong><br>for…of循环可以自动遍历Generator函数，且此时不再需要generator函数。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">yield</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">yield</span> <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">3</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">of</span> foo())&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(v);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//1, 2, 3</span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>参考资料：</p>
+<p>ES6标准入门(第2版)    阮一峰 著</p>
+</blockquote>
 
       
     </div>
@@ -337,7 +342,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/react/" rel="tag">#react</a>
+            <a href="/tags/JS/" rel="tag">#JS</a>
           
         </div>
       
@@ -346,17 +351,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/26/JS中的正则表达式/" rel="next" title="JS中的正则表达式">
-                <i class="fa fa-chevron-left"></i> JS中的正则表达式
+              <a href="/2016/05/31/React系列学习笔记之表单详解/" rel="next" title="React系列学习笔记之表单详解">
+                <i class="fa fa-chevron-left"></i> React系列学习笔记之表单详解
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/07/Generator函数/" rel="prev" title="Generator函数">
-                Generator函数 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -382,8 +383,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/05/31/React系列学习笔记之表单详解/"
-           data-title="React系列学习笔记之表单详解" data-url="http://yoursite.com/2016/05/31/React系列学习笔记之表单详解/">
+      <div class="ds-thread" data-thread-key="2016/06/07/Generator函数/"
+           data-title="Generator函数" data-url="http://yoursite.com/2016/06/07/Generator函数/">
       </div>
     
   </div>

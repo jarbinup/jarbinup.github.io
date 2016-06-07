@@ -226,6 +226,144 @@
             
               
                 
+                <a class="post-title-link" href="/2016/06/07/Generator函数/" itemprop="url">
+                  Generator函数
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-06-07T13:07:07+08:00" content="2016-06-07">
+              2016-06-07
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Tech-study/" itemprop="url" rel="index">
+                    <span itemprop="name">Tech-study</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/07/Generator函数/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/07/Generator函数/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p><strong>1.generator函数简介</strong></p>
+<blockquote>
+<p>两个角度理解：<br>1.它是一个状态机，函数内部封装了多个状态。<br>2.执行generator函数会返回一个遍历器对象，可以遍历内部的每一个对象</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node test</span><br><span class="line">&#123;&#125;  <span class="comment">//遍历器对象</span></span><br></pre></td></tr></table></figure>
+<p>test.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">helloGenerator</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">yield</span> <span class="string">'hello'</span>;</span><br><span class="line">	<span class="keyword">yield</span> <span class="string">'world'</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="string">'ending'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> hg = helloGenerator();</span><br><span class="line"><span class="built_in">console</span>.log(hg.next());</span><br></pre></td></tr></table></figure></p>
+<p>注意是<code>yield语句</code>,后面加<code>;</code>而不是<code>,</code><br><code>next()</code>方法会返回一个对象。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; value: <span class="string">'hello'</span>, done: <span class="literal">false</span> &#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>2.yield语句</strong><br>generator实际上提供了一种可以暂时执行的函数，yield语句就是暂停标志。</p>
+<p>yield语句与return语句的相似之处在于都可以返回紧跟在语句后的表达式的值；区别在于yield语句具有位置记忆的功能，每次遇到yield语句，下一次会从该位置继续执行。一个函数里面只能执行一个return语句，但可以执行多个yield语句</p>
+<p><strong>yield语句不能在普通函数中使用，否则会报错。</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">yield</span> <span class="number">1</span>;</span><br><span class="line">&#125;)()</span><br><span class="line"><span class="comment">// Unexpected number</span></span><br></pre></td></tr></table></figure></p>
+<p>用generator函数取出嵌套结构中的数组<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, [<span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>]], <span class="number">5</span>, <span class="number">6</span>];</span><br><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">flat</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> length = a.length;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; length; i++) &#123;</span><br><span class="line">        <span class="keyword">var</span> item = a[i];</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">typeof</span> item !== <span class="string">'number'</span>) &#123;</span><br><span class="line">            <span class="keyword">yield</span>* flat(item);</span><br><span class="line">            <span class="comment">// for(let v of flat(item))&#123;</span></span><br><span class="line">            <span class="comment">//     yield v;</span></span><br><span class="line">            <span class="comment">// &#125;</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">yield</span> item;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> f <span class="keyword">of</span> flat(arr)) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(f);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 1, 2, 3, 4, 5, 6</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>generator函数如果放在用在一个表达式中，必须放在圆括号里面</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'Hello'</span> + <span class="keyword">yield</span>); <span class="comment">// SyntaxError</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Hello'</span> + (<span class="keyword">yield</span>)); <span class="comment">// OK</span></span><br></pre></td></tr></table></figure></p>
+<p>当用作函数参数或用于赋值 表达式的右边，可以不加括号<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">foo(<span class="keyword">yield</span> <span class="string">'a'</span>, <span class="keyword">yield</span> <span class="string">'b'</span>); <span class="comment">//OK</span></span><br><span class="line"><span class="keyword">let</span> input = <span class="keyword">yield</span>; <span class="comment">//OK</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>yield*语句</strong>，用来在一个generator函数里面执行另外一个generator函数。等同于在Generator函数内部部署了一个for…of循环。<br><strong>3.与Iterator接口的关系</strong><br><code>Symbol.iterator</code>方法是对象的<code>遍历器对象</code>生成函数。调用该函数会返回该对象的一个遍历器对象。<br>遍历器对象本身也有<code>Symbol.iterator</code>方法，执行后返回它本身。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">gen</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//...some code</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> g = gen();</span><br><span class="line"></span><br><span class="line">g[<span class="built_in">Symbol</span>.iterator]() === g;</span><br><span class="line"><span class="comment">//true</span></span><br></pre></td></tr></table></figure></p>
+<p>前面提到过，直接执行generator函数会返回一个遍历器对象。调用这个遍历器对象的<code>Symbol.iterator</code>方法，返回它本身。</p>
+<p><strong>4.next方法与参数</strong><br>yield函数本身没有参数。或者说总是返回undefined。next方法可以带一个参数，该参数会被当作上一条yield语句的返回值。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; <span class="literal">true</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">var</span> reset = <span class="keyword">yield</span> i;</span><br><span class="line">        <span class="keyword">if</span>(reset) &#123; </span><br><span class="line">            i = <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> g = f();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(g.next());</span><br><span class="line"><span class="built_in">console</span>.log(g.next());</span><br><span class="line"><span class="built_in">console</span>.log(g.next(<span class="literal">true</span>));</span><br><span class="line"><span class="comment">//&#123; value: 0, done: false &#125;</span></span><br><span class="line"><span class="comment">//&#123; value: 1, done: false &#125;</span></span><br><span class="line"><span class="comment">//&#123; value: 0, done: false &#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>当next带参数true,ture会被传递给上一个yield语句的返回值,i的值也相应的重置为-1。</p>
+<p>通过next方法的参数，可以在Generator函数运行的不同阶段，从外部向内部注入不同的值，从而<strong>调整</strong>函数的行为。</p>
+<p>由于next方法的参数表示上一条yield语句的返回值，所以第一次调用next方法不能带有参数。从语义上来讲第一条yield语句用来启动遍历器对象，所以不能带有参数。<br><strong>5.for…of循环</strong><br>for…of循环可以自动遍历Generator函数，且此时不再需要generator函数。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">yield</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">yield</span> <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">3</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> v <span class="keyword">of</span> foo())&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(v);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//1, 2, 3</span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>参考资料：</p>
+<p>ES6标准入门(第2版)    阮一峰 著</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/05/31/React系列学习笔记之表单详解/" itemprop="url">
                   React系列学习笔记之表单详解
                 </a>
@@ -626,7 +764,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -643,7 +781,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
