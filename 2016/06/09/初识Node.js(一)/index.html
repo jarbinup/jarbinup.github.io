@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Web," />
+  <meta name="keywords" content="node," />
 
 
 
@@ -57,28 +57,40 @@
 
 
 
-<meta name="description" content="今天是3月29号，正式学习前端的第31天。写下这篇文章总结自己在过去一个的月的收获和成长。
-前端学习
-1.读书开学到现在读完了两本书。1.《精通CSS》2.《JavaScript语言精粹》
-第一本《精通CSS》，看完感觉是对自己之前零星学习CSS的一次总结。读起来也比较流畅，书里面的demo差不多都实现了一遍。不过书比较老，一些新的知识点书里面没有讲到，比如布局功能很强大的flex属性。
-第二本《">
+<meta name="description" content="概述node是JS语言的服务器运行环境。所谓运行环境有两层意思：
+
+node是JS是的虚拟机node又是JS的工具库
+
+运行node.js文件就是用node命令读取JS脚本
+基本用法12node demonode demo.js
+执行demo.js脚本1node -e &apos;console.log(&quot;Hello World&quot;)&apos;
+使用-e参数，直接执行代码字符串。
+REPL环境1234$ node&amp;g">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前端启航">
-<meta property="og:url" content="http://yoursite.com/2016/03/29/前端启航/index.html">
+<meta property="og:title" content="初识Node.js(一)">
+<meta property="og:url" content="http://yoursite.com/2016/06/09/初识Node.js(一)/index.html">
 <meta property="og:site_name" content="jarbinup's Notes">
-<meta property="og:description" content="今天是3月29号，正式学习前端的第31天。写下这篇文章总结自己在过去一个的月的收获和成长。
-前端学习
-1.读书开学到现在读完了两本书。1.《精通CSS》2.《JavaScript语言精粹》
-第一本《精通CSS》，看完感觉是对自己之前零星学习CSS的一次总结。读起来也比较流畅，书里面的demo差不多都实现了一遍。不过书比较老，一些新的知识点书里面没有讲到，比如布局功能很强大的flex属性。
-第二本《">
-<meta property="og:updated_time" content="2016-03-29T15:10:18.289Z">
+<meta property="og:description" content="概述node是JS语言的服务器运行环境。所谓运行环境有两层意思：
+
+node是JS是的虚拟机node又是JS的工具库
+
+运行node.js文件就是用node命令读取JS脚本
+基本用法12node demonode demo.js
+执行demo.js脚本1node -e &apos;console.log(&quot;Hello World&quot;)&apos;
+使用-e参数，直接执行代码字符串。
+REPL环境1234$ node&amp;g">
+<meta property="og:updated_time" content="2016-06-09T04:15:14.696Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端启航">
-<meta name="twitter:description" content="今天是3月29号，正式学习前端的第31天。写下这篇文章总结自己在过去一个的月的收获和成长。
-前端学习
-1.读书开学到现在读完了两本书。1.《精通CSS》2.《JavaScript语言精粹》
-第一本《精通CSS》，看完感觉是对自己之前零星学习CSS的一次总结。读起来也比较流畅，书里面的demo差不多都实现了一遍。不过书比较老，一些新的知识点书里面没有讲到，比如布局功能很强大的flex属性。
-第二本《">
+<meta name="twitter:title" content="初识Node.js(一)">
+<meta name="twitter:description" content="概述node是JS语言的服务器运行环境。所谓运行环境有两层意思：
+
+node是JS是的虚拟机node又是JS的工具库
+
+运行node.js文件就是用node命令读取JS脚本
+基本用法12node demonode demo.js
+执行demo.js脚本1node -e &apos;console.log(&quot;Hello World&quot;)&apos;
+使用-e参数，直接执行代码字符串。
+REPL环境1234$ node&amp;g">
 
 
 
@@ -96,7 +108,7 @@
   };
 </script>
 
-  <title> 前端启航 | jarbinup's Notes </title>
+  <title> 初识Node.js(一) | jarbinup's Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -236,7 +248,7 @@
             
             
               
-                前端启航
+                初识Node.js(一)
               
             
           </h1>
@@ -248,8 +260,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-03-29T20:27:50+08:00" content="2016-03-29">
-              2016-03-29
+            <time itemprop="dateCreated" datetime="2016-06-09T12:14:05+08:00" content="2016-06-09">
+              2016-06-09
             </time>
           </span>
 
@@ -278,8 +290,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/29/前端启航/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/29/前端启航/" itemprop="commentsCount"></span>
+                <a href="/2016/06/09/初识Node.js(一)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/09/初识Node.js(一)/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -301,16 +313,40 @@
       
 
       
-        <p>今天是3月29号，正式学习前端的第31天。写下这篇文章总结自己在过去一个的月的收获和成长。</p>
-<h3 id="前端学习"><a href="#前端学习" class="headerlink" title="前端学习"></a>前端学习</h3><hr>
-<h4 id="1-读书"><a href="#1-读书" class="headerlink" title="1.读书"></a>1.读书</h4><p>开学到现在读完了两本书。<br>1.《精通CSS》<br>2.《JavaScript语言精粹》</p>
-<p>第一本《精通CSS》，看完感觉是对自己之前零星学习CSS的一次总结。读起来也比较流畅，书里面的demo差不多都实现了一遍。不过书比较老，一些新的知识点书里面没有讲到，比如布局功能很强大的flex属性。</p>
-<p>第二本《JavaScript语言精粹》，读起来比较吃力，函数那一章被作用域，闭包，回调等概念搞的晕头转向。对，还有this对象指向的问题。虽然很薄的一本书，但要吃透，我觉得自己至少还得多读几遍。</p>
-<h4 id="2-项目"><a href="#2-项目" class="headerlink" title="2.项目"></a>2.项目</h4><p>项目的话，大多数时间在做静态页面。百度前端技术学院task1到task7，外加我们的团队主页，个人主页。现在写静态页面已经比较熟练。下一阶段的学习重心是JS。</p>
-<h4 id="3-其他重要的事"><a href="#3-其他重要的事" class="headerlink" title="3.其他重要的事"></a>3.其他重要的事</h4><p>a.终于搭建好了自己的博客。哈哈哈，今天这是第一篇。<br>b.加入了明理苑(学校里面的前端开发团队)，感谢以曹大为首的各位大大给的机会。<br>c.鼓足勇气给云龙大大写了一封长长的求职信。第一次写。花了整整一个下午的时间。结果嘛，被拒绝。完全在意料之中的事。<br>不过最开心的是得到了云龙大大的回复与鼓励，这更加坚定了自己的前端之路。</p>
-<h3 id="心态"><a href="#心态" class="headerlink" title="心态"></a>心态</h3><hr>
-<p>最爽的是每天逃课，然后一个人在图书馆敲代码。<br>哈哈，据悉今天下午我又被老师点名了，然后被老师问：“某某同学是不是退学了？怎么从来都不上课？”。以前，自己总是在抱怨。抱怨老师上课空洞无物，抱怨老师对我们不负责任。整天一副苦大仇深的样子。当时自己终究是太软弱，没有勇敢去追求自己喜欢做的事。所以我现在一直觉得之前的自己一定是被那个软弱的我压迫太久了，以至于现在才反抗的那么激烈。哈哈俗话说的好：矫枉必须过正嘛。我还经常和室友调侃：连逃课的勇气都没有，怎么敢跟自己说follow your heart 呢？</p>
-<p>所以一定要坚持下去，加油！:)</p>
+        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>node是JS语言的服务器运行环境。所谓运行环境有两层意思：</p>
+<blockquote>
+<p>node是JS是的虚拟机<br>node又是JS的工具库</p>
+</blockquote>
+<p>运行node.js文件就是用node命令读取JS脚本</p>
+<h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node demo</span><br><span class="line">node demo.js</span><br></pre></td></tr></table></figure>
+<p>执行demo.js脚本<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -e <span class="string">'console.log("Hello World")'</span></span><br></pre></td></tr></table></figure></p>
+<p>使用<code>-e</code>参数，直接执行代码字符串。</p>
+<h3 id="REPL环境"><a href="#REPL环境" class="headerlink" title="REPL环境"></a>REPL环境</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ node</span><br><span class="line">&gt; <span class="number">1</span>+<span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<p>命令行键入<code>node</code>进入node.js的REPL环境(Read-eval-print loop)</p>
+<h3 id="异步操作"><a href="#异步操作" class="headerlink" title="异步操作"></a>异步操作</h3><p>node的内部使用谷歌开发的V8引擎，其最大特点就是单线程运行。这导致Node大量采用异步操作(asynchronous opertion)。node中常采用回调函数(callback)的形式定义异步调用。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> isTrue = <span class="function"><span class="keyword">function</span>(<span class="params">value, callback</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (value === <span class="literal">true</span>) &#123;</span><br><span class="line">        callback(<span class="literal">null</span>, <span class="string">"Value was true."</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        callback(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">"Value is not  true"</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> callback = <span class="function"><span class="keyword">function</span> (<span class="params">eror, value</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (error) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">console</span>.log(error);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  db.User.get(userId, <span class="function"><span class="keyword">function</span>(<span class="params">err, user</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(err) &#123;</span><br><span class="line">      <span class="keyword">throw</span> err</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125; <span class="keyword">catch</span>(e) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(‘Oh no!’);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当回调函数运行时，前期的操作早已结束。此时try…catch代码块不能正常捕获异常。所以将error当作参数传给回调函数进行处理。</p>
+<p>如果没有发生错误，回调函数第一个参数传入null。这是就可以通过判断第一个参数来确定有没有发生错误。</p>
+<h3 id="全局对象和全局变量"><a href="#全局对象和全局变量" class="headerlink" title="全局对象和全局变量"></a>全局对象和全局变量</h3><h4 id="node提供的全局对象，所有模块都可以调用。"><a href="#node提供的全局对象，所有模块都可以调用。" class="headerlink" title="node提供的全局对象，所有模块都可以调用。"></a>node提供的全局对象，所有模块都可以调用。</h4><blockquote>
+<p><strong>global</strong> node所在的全局环境，注意模块的全局变量该模块私有，其他模块无法取到<br><strong>process</strong> 表示node所处的当前进程，允许开发者与该进程互动<br><strong>console</strong> 提供命令行环境中的标准输入，标准输出功能</p>
+</blockquote>
+<h4 id="node提供的一些全局函数-方法"><a href="#node提供的一些全局函数-方法" class="headerlink" title="node提供的一些全局函数(方法)"></a>node提供的一些全局函数(方法)</h4><blockquote>
+<p>setTimeout():指定毫秒之后，运行回调函数<br>clearTimeout():终止一个setTimeout()方法<br>setInterval():每隔指定时间(毫秒)调用回调函数<br>clearInterval(): 终止一个setInterval()方法<br>require(): 用于加载模块<br>Buffer(): 用于操作二进制数据</p>
+</blockquote>
+<h4 id="node提供两个全局变量"><a href="#node提供两个全局变量" class="headerlink" title="node提供两个全局变量"></a>node提供两个全局变量</h4><blockquote>
+<p><strong>__filename</strong>：指定当前运行的脚本的文件名<br><strong>__dirname</strong>：指定当前运行的脚本所在的目录</p>
+</blockquote>
+<h2 id="模块系统"><a href="#模块系统" class="headerlink" title="模块系统"></a>模块系统</h2><p>Node.js使用CommonJS规范定义和使用模块。加载一个模块实际上就是加载一个文件。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> demo = <span class="built_in">require</span>(<span class="string">'./demo.js'</span>);</span><br><span class="line"><span class="keyword">var</span> demo = <span class="built_in">require</span>(<span class="string">'./demo'</span>);</span><br><span class="line"><span class="comment">//此时的路径是相对于当前脚本所在的目录</span></span><br><span class="line"><span class="keyword">var</span> bar = <span class="built_in">require</span>(<span class="string">'bar'</span>);</span><br><span class="line"><span class="comment">//此时到node的安装目录，去寻找已安装模块</span></span><br></pre></td></tr></table></figure></p>
+<p>如果一个模块本身就是一个目录，目录中包含多个文件，此时,node在package.json文件中，寻找main属性所指明的模块入口文件。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"name"</span>: <span class="string">"bar"</span>,</span><br><span class="line">    <span class="string">"main"</span>: <span class="string">"./lib/bar.js"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>模块一旦被加载以后，就会被系统缓存。如果第二次还加载该模块，则会返回缓存中的版本.</p>
+<h3 id="核心模块"><a href="#核心模块" class="headerlink" title="核心模块"></a>核心模块</h3><blockquote>
+<p>http：提供HTTP服务器功能。<br>url：解析URL。<br>fs：与文件系统交互。<br>querystring：解析URL的查询字符串。<br>child_process：新建子进程。<br>util：提供一系列实用小工具。<br>path：处理文件路径。<br>crypto：提供加密和解密功能，基本上是对OpenSSL的包装。</p>
+</blockquote>
+<h3 id="自定义模块"><a href="#自定义模块" class="headerlink" title="自定义模块"></a>自定义模块</h3><p>只要符合CommonJS规范，就可以自定义模块。</p>
+<p>具体细节，下一篇展开~</p>
+<blockquote>
+<p>参考资料<br><a href="http://javascript.ruanyifeng.com/nodejs/basic.html" target="_blank" rel="external">JavaScript 标准参考教程(alpha)</a></p>
+</blockquote>
 
       
     </div>
@@ -325,7 +361,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Web/" rel="tag">#Web</a>
+            <a href="/tags/node/" rel="tag">#node</a>
           
         </div>
       
@@ -334,13 +370,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/06/07/Generator函数/" rel="next" title="Generator函数">
+                <i class="fa fa-chevron-left"></i> Generator函数
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/26/JS中的正则表达式/" rel="prev" title="JS中的正则表达式">
-                JS中的正则表达式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -366,8 +402,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/29/前端启航/"
-           data-title="前端启航" data-url="http://yoursite.com/2016/03/29/前端启航/">
+      <div class="ds-thread" data-thread-key="2016/06/09/初识Node.js(一)/"
+           data-title="初识Node.js(一)" data-url="http://yoursite.com/2016/06/09/初识Node.js(一)/">
       </div>
     
   </div>
@@ -481,7 +517,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前端学习"><span class="nav-number">1.</span> <span class="nav-text">前端学习</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-读书"><span class="nav-number">1.1.</span> <span class="nav-text">1.读书</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-项目"><span class="nav-number">1.2.</span> <span class="nav-text">2.项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-其他重要的事"><span class="nav-number">1.3.</span> <span class="nav-text">3.其他重要的事</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#心态"><span class="nav-number">2.</span> <span class="nav-text">心态</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本用法"><span class="nav-number">1.1.</span> <span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#REPL环境"><span class="nav-number">1.2.</span> <span class="nav-text">REPL环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异步操作"><span class="nav-number">1.3.</span> <span class="nav-text">异步操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局对象和全局变量"><span class="nav-number">1.4.</span> <span class="nav-text">全局对象和全局变量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#node提供的全局对象，所有模块都可以调用。"><span class="nav-number">1.4.1.</span> <span class="nav-text">node提供的全局对象，所有模块都可以调用。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#node提供的一些全局函数-方法"><span class="nav-number">1.4.2.</span> <span class="nav-text">node提供的一些全局函数(方法)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#node提供两个全局变量"><span class="nav-number">1.4.3.</span> <span class="nav-text">node提供两个全局变量</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模块系统"><span class="nav-number">2.</span> <span class="nav-text">模块系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#核心模块"><span class="nav-number">2.1.</span> <span class="nav-text">核心模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义模块"><span class="nav-number">2.2.</span> <span class="nav-text">自定义模块</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
