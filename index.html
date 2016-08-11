@@ -226,6 +226,139 @@
             
               
                 
+                <a class="post-title-link" href="/2016/08/11/ng核心概念梳理(一)/" itemprop="url">
+                  ng 核心概念梳理 ( 一 )
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-08-11T23:37:57+08:00" content="2016-08-11">
+              2016-08-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Tech-study/" itemprop="url" rel="index">
+                    <span itemprop="name">Tech-study</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/11/ng核心概念梳理(一)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/11/ng核心概念梳理(一)/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="数据绑定-DB"><a href="#数据绑定-DB" class="headerlink" title="数据绑定(DB)"></a>数据绑定(DB)</h2><ol>
+<li>module 层的数据和 view 层的数据实现自动同步。</li>
+<li>view 层是 module 层的一个 映射 ( projection ), 反映视图层的改变</li>
+<li>双向数据绑定<br><img src="http://7xrzdf.com1.z0.glb.clouddn.com/ngdb.PNG" alt="双向数据绑定"></li>
+</ol>
+<h2 id="Controllers"><a href="#Controllers" class="headerlink" title="Controllers"></a>Controllers</h2><ol>
+<li>ng 中，controller 就是一个 js 构造器函数,用来增加 Angular Scope</li>
+<li>当一个 Controller 通过 <code>ng-controller</code> 指令关联到一个 DOM 节点上。Angular 会通过这个Controler构造函数实例化一个新的controller 对象。同时，会产生一个新的子作用域 <code>child scope</code>。在 controller 中通过传入的 <code>$scope</code>参数，访问这个参数。</li>
+<li>controller 主要用来 建立 <code>$scope</code> 对象的初始化状态，为 <code>$scope</code> 对象添加行为(业务逻辑)。</li>
+<li>不要在 controller 中：<br>a. 操作DOM, 用指令代替<br>b. 格式输入, 用 <code>angular form controls</code> 代替<br>c. 过滤输出, 用 <code>angular filters</code> 代替<br>d. 共用/共享 代码或状态，<code>angular service</code> 代替<br>e. 管理组件的生命周期</li>
+<li>controller 中只应该包含对单一视图的必须业务逻辑。保持业务逻辑轻量最常见的方法，将不是业务逻辑的功能封装在<code>services</code>中。</li>
+<li>可以通过<code>ng-controller</code> 和 <code>$route service</code> 隐式的将 Controller 和 scope object 关联起来</li>
+<li>作用域继承( Scope Inheritance ) child scope 可以继承 parent 的属性，在自己的 scope 中，可以重写继承的属性。</li>
+</ol>
+<h2 id="Services"><a href="#Services" class="headerlink" title="Services"></a>Services</h2><ol>
+<li>通过依赖注入的方式使用 service</li>
+<li>创建 services, 通过<code>Module API</code>注册 service 在 module 上，也可以通过 <code>$provide</code> 例如<br>```js<br>var myModule = angular.module( ‘myModule’, []);<br>myModule.factory(‘serviceId’, function() {<br> var newService;<br> //…<br> return newSerive;<br>});</li>
+</ol>
+<p>angular.module(‘myModule’, [])<br>    .config([ ‘$provide’, function( $provide ) {<br>    var newService;<br>    //…<br>    return newSerive;<br>    }]);<br>``` </p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/06/09/初识Node.js(一)/" itemprop="url">
                   初识Node.js(一)
                 </a>
@@ -912,7 +1045,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -929,7 +1062,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
