@@ -61,7 +61,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS中的正则表达式">
 <meta property="og:url" content="http://yoursite.com/2016/04/26/reg-exp-in-js/index.html">
-<meta property="og:site_name" content="jarbinup's Notes">
+<meta property="og:site_name" content="promised land">
 <meta property="og:description" content="总结一下JS中正则表达式的常见用法：">
 <meta property="og:image" content="http://7xrzdf.com1.z0.glb.clouddn.com/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F.png">
 <meta property="og:updated_time" content="2016-10-08T08:29:26.049Z">
@@ -80,13 +80,13 @@
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: 0,
+      userId: undefined,
       author: '博主'
     }
   };
 </script>
 
-  <title> JS中的正则表达式 | jarbinup's Notes </title>
+  <title> JS中的正则表达式 | promised land </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -117,11 +117,11 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">jarbinup's Notes</span>
+      <span class="site-title">promised land</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle">晚来天欲雪，能饮一杯无？</p>
+  <p class="site-subtitle">晴云交替，就如人生悲喜</p>
 </div>
 
 <div class="site-nav-toggle">
@@ -269,7 +269,7 @@
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
                 <a href="/2016/04/26/reg-exp-in-js/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/26/reg-exp-in-js/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/26/reg-exp-in-js/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -357,8 +357,11 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/04/26/reg-exp-in-js/"
-           data-title="JS中的正则表达式" data-url="http://yoursite.com/2016/04/26/reg-exp-in-js/">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
       </div>
     
   </div>
@@ -396,9 +399,9 @@
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
-               alt="yangyp" />
-          <p class="site-author-name" itemprop="name">yangyp</p>
-          <p class="site-description motion-element" itemprop="description">词不达意的我O_o</p>
+               alt="jarbinup" />
+          <p class="site-author-name" itemprop="name">jarbinup</p>
+          <p class="site-description motion-element" itemprop="description">coder | runner</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
@@ -411,7 +414,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -420,7 +423,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -498,7 +501,7 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">yangyp</span>
+  <span class="author" itemprop="copyrightHolder">jarbinup</span>
 </div>
 
 <div class="powered-by">
@@ -741,28 +744,30 @@
 
   
 
-  
-    
-  
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"jarbinup"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-
-  
-    
-  
 
 
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'jarbinup';
+      var disqus_identifier = '2016/04/26/reg-exp-in-js/';
+      var disqus_title = 'JS中的正则表达式';
+      var disqus_url = 'http://yoursite.com/2016/04/26/reg-exp-in-js/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
 
 
 
