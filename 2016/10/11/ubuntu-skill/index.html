@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="react," />
+  <meta name="keywords" content="ubuntu," />
 
 
 
@@ -57,16 +57,16 @@
 
 
 
-<meta name="description" content="1. 可控组件和不可控组件2. 不同表单元素的使用3. 如何复用事件处理函数">
+<meta name="description" content="总结积累常用的 ubuntn 技巧( 持续更新中 )：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="React系列学习笔记之表单详解">
-<meta property="og:url" content="http://yoursite.com/2016/05/31/react-form/index.html">
+<meta property="og:title" content="ubuntn 实用技巧">
+<meta property="og:url" content="http://yoursite.com/2016/10/11/ubuntu-skill/index.html">
 <meta property="og:site_name" content="promised land">
-<meta property="og:description" content="1. 可控组件和不可控组件2. 不同表单元素的使用3. 如何复用事件处理函数">
-<meta property="og:updated_time" content="2016-10-08T08:29:33.921Z">
+<meta property="og:description" content="总结积累常用的 ubuntn 技巧( 持续更新中 )：">
+<meta property="og:updated_time" content="2016-10-11T02:01:11.661Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React系列学习笔记之表单详解">
-<meta name="twitter:description" content="1. 可控组件和不可控组件2. 不同表单元素的使用3. 如何复用事件处理函数">
+<meta name="twitter:title" content="ubuntn 实用技巧">
+<meta name="twitter:description" content="总结积累常用的 ubuntn 技巧( 持续更新中 )：">
 
 
 
@@ -84,7 +84,7 @@
   };
 </script>
 
-  <title> React系列学习笔记之表单详解 | promised land </title>
+  <title> ubuntn 实用技巧 | promised land </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -224,7 +224,7 @@
             
             
               
-                React系列学习笔记之表单详解
+                ubuntn 实用技巧
               
             
           </h1>
@@ -236,8 +236,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-31T00:00:00+08:00" content="2016-05-31">
-              2016-05-31
+            <time itemprop="dateCreated" datetime="2016-10-11T09:21:34+08:00" content="2016-10-11">
+              2016-10-11
             </time>
           </span>
 
@@ -250,8 +250,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/fed/" itemprop="url" rel="index">
-                    <span itemprop="name">fed</span>
+                  <a href="/categories/工具/" itemprop="url" rel="index">
+                    <span itemprop="name">工具</span>
                   </a>
                 </span>
 
@@ -266,8 +266,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/31/react-form/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/05/31/react-form/" itemprop="commentsCount"></span>
+                <a href="/2016/10/11/ubuntu-skill/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/10/11/ubuntu-skill/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -289,28 +289,21 @@
       
 
       
-        <blockquote>
-<p><strong>1. 可控组件和不可控组件</strong><br><strong>2. 不同表单元素的使用</strong><br><strong>3. 如何复用事件处理函数</strong></p>
-</blockquote>
-<a id="more"></a>
-<p> <strong>1.1 不可控组件</strong><br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">"text"</span> defaultValue=<span class="string">"Hello World!"</span>&gt;</span><br></pre></td></tr></table></figure></p>
-<p>前面这个简单的input组件<strong>[react中有两大类组件，一类是自定义的组件，另一类是原生的HTML标签]</strong>就是一个不可控组件。</p>
-<p>因为组件中的数据和state中的数据不再对应，而是写死在了组件中。组件中的数据对整个组件来说是不可控的。</p>
-<p>不可控组件组件下，如果我们要获取到<code>defaultValue</code>的值，就必须得去操作真实的DOM.<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">"text"</span> ref=<span class="string">"hello"</span> defaultValue=<span class="string">"Hello World!"</span>&gt;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> inputValue = React.findDOMNode(<span class="keyword">this</span>.refs.hello).value;</span><br></pre></td></tr></table></figure>
-<p>给组件添加<code>ref</code>属性，然后通过<code>React.findDOMNode()</code>找到对应的节点。</p>
-<p> <strong>1.2 可控组件</strong><br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">getInitialState: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        hello: <span class="string">"Hello World!"</span></span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">"text"</span> ref=<span class="string">"hello"</span> value=&#123;<span class="keyword">this</span>.state.hello&#125;&gt;</span><br></pre></td></tr></table></figure>
-<p>上面这个就是可控组件，数据存储在state中，便于使用，读取的是JS对象而不是DOM节点。符合reac单向数据流的特点，数据从state–&gt;render。<br>使用可控组件可以方便的对数据进行处理，比如在handleChange里面可以对数据进行方便的操作。</p>
-<p> <strong>2. 不同表单元素的使用</strong><br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;label htmlFor=<span class="string">"name"</span> className=<span class="string">"name"</span>&gt;name&lt;label&gt;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">"checkbox"</span> <span class="comment">/* "radio" "text"*/</span></span><br><span class="line">       value=<span class="string">"A"</span></span><br><span class="line">       checked=&#123;<span class="keyword">this</span>.state.checked&#125;</span><br><span class="line">       onchange=&#123;<span class="keyword">this</span>.handleChange&#125; /&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;textarea value=<span class="string">"A"</span> rows=<span class="string">"10"</span> cols=<span class="string">"30"</span></span><br><span class="line">          onChange=&#123;<span class="keyword">this</span>.handleChange&#125; /&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;select value=&#123;this.state.hello&#125;</span><br><span class="line">        onChange=&#123;this.handleChange&#125;&gt;</span><br><span class="line">    &lt;option value="one"&gt;一&lt;/option&gt;</span><br><span class="line">    &lt;option value="two"&gt;二&lt;/option&gt;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
-<p>说明一下上面select的value是每次被选中option的value</p>
-<p><strong>3. 如何复用事件处理函数</strong><br>事件函数的可以有<code>bind</code>和<code>name</code>复用两种<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">handleChange(name, event)&#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">&lt;input type=<span class="string">"text"</span> onChange=&#123;<span class="keyword">this</span>.handleChange.bind(<span class="keyword">this</span>, <span class="string">`input1`</span>)&#125;&gt;</span><br><span class="line">&lt;input type="text" onChange=&#123;this.handleChange.bind(this, `input2`)&#125;&gt;</span><br></pre></td></tr></table></figure></p>
-<p><code>bind</code>每次将第二参数传给handleChange的name,这样每次调用handleChange，就可以分辨出是哪个input发生了变化。<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">handleChange(name,event)&#123;</span><br><span class="line">    <span class="keyword">var</span> name = event.target.name;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">&lt;input type=<span class="string">"text"</span> name=<span class="string">"input1"</span> onChange=&#123;<span class="keyword">this</span>.handleChange&#125;&gt;</span><br><span class="line">&lt;input type="text" name="input2" onChange=&#123;this.handleChange&#125;&gt;</span><br></pre></td></tr></table></figure></p>
-<p>给input添加name属性，每次在handleChange中获取目标事件的name，确定要处理的input.达到复用事件处理函数。</p>
-<p>两种方法都可以复用事件处理函数。不过通过name实现的复用性能比bind实现的低。前者每次都会在事件处理函数中获取一次name的值，后者直接在参数中直接传入。推荐使用bind.</p>
+        <p>总结积累常用的 ubuntn 技巧( 持续更新中 )：<br><a id="more"></a></p>
+<h1 id="桌面技巧"><a href="#桌面技巧" class="headerlink" title="桌面技巧"></a>桌面技巧</h1><ol>
+<li><code>ctrl+alt+T</code> 直接打开终端</li>
+<li><code>alt+F4</code> 关闭当前窗口</li>
+<li><code>super(保持)</code> 打开启动器</li>
+<li><code>super+tab</code>启动器中切换, <code>super+1到9</code> 直接打开， <code>super+T</code>打开垃圾桶</li>
+<li><code>super(轻触)</code> 打开 dash 面板， <code>ctrl+tab</code> 切换</li>
+<li><code>alt+tab</code>  切换应用程序， <code>alt+</code> ` 切换当前应用程序窗口</li>
+<li><code>super+w</code>  展示所有窗口</li>
+</ol>
+<h1 id="终端技巧"><a href="#终端技巧" class="headerlink" title="终端技巧"></a>终端技巧</h1><ol>
+<li><code>cd { dirname }</code> 进入某个文件夹，按 tab 自动补全， <code>cd ..</code> 返回上一层目录 </li>
+<li><code>xdg-open { file | URL }</code> 用命令行打开相应的文件</li>
+<li><code>ctrl+shift+N</code> 在当前路径下新建一个终端，注意和 <code>ctrl+alt+T</code> 区别。</li>
+</ol>
 
       
     </div>
@@ -325,7 +318,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/react/" rel="tag">#react</a>
+            <a href="/tags/ubuntu/" rel="tag">#ubuntu</a>
           
         </div>
       
@@ -334,17 +327,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/26/reg-exp-in-js/" rel="next" title="JS中的正则表达式">
-                <i class="fa fa-chevron-left"></i> JS中的正则表达式
+              <a href="/2016/10/10/data-structure-of-graph/" rel="next" title="数据结构--图">
+                <i class="fa fa-chevron-left"></i> 数据结构--图
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/07/generator/" rel="prev" title="Generator函数">
-                Generator函数 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -488,7 +477,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#桌面技巧"><span class="nav-number">1.</span> <span class="nav-text">桌面技巧</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#终端技巧"><span class="nav-number">2.</span> <span class="nav-text">终端技巧</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -763,9 +752,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'jarbinup';
-      var disqus_identifier = '2016/05/31/react-form/';
-      var disqus_title = 'React系列学习笔记之表单详解';
-      var disqus_url = 'http://yoursite.com/2016/05/31/react-form/';
+      var disqus_identifier = '2016/10/11/ubuntu-skill/';
+      var disqus_title = 'ubuntn 实用技巧';
+      var disqus_url = 'http://yoursite.com/2016/10/11/ubuntu-skill/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
