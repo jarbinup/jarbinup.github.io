@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="ubuntu," />
+  <meta name="keywords" content="linux," />
 
 
 
@@ -57,16 +57,22 @@
 
 
 
-<meta name="description" content="总结积累常用的 ubuntn 技巧( 持续更新中 )：">
+<meta name="description" content="本篇包括三部分：
+
+目录结构及文件基本操作环境变量与文件查找文件打包与解压缩">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ubuntn 实用技巧">
-<meta property="og:url" content="http://yoursite.com/2016/10/11/ubuntu-skill/index.html">
+<meta property="og:title" content="Linux 基础入门（二）">
+<meta property="og:url" content="http://yoursite.com/2016/10/15/learn-how-to-use-linux-two/index.html">
 <meta property="og:site_name" content="promised land">
-<meta property="og:description" content="总结积累常用的 ubuntn 技巧( 持续更新中 )：">
-<meta property="og:updated_time" content="2016-10-12T12:44:42.750Z">
+<meta property="og:description" content="本篇包括三部分：
+
+目录结构及文件基本操作环境变量与文件查找文件打包与解压缩">
+<meta property="og:updated_time" content="2016-10-16T09:14:56.178Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ubuntn 实用技巧">
-<meta name="twitter:description" content="总结积累常用的 ubuntn 技巧( 持续更新中 )：">
+<meta name="twitter:title" content="Linux 基础入门（二）">
+<meta name="twitter:description" content="本篇包括三部分：
+
+目录结构及文件基本操作环境变量与文件查找文件打包与解压缩">
 
 
 
@@ -84,7 +90,7 @@
   };
 </script>
 
-  <title> ubuntn 实用技巧 | promised land </title>
+  <title> Linux 基础入门（二） | promised land </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -224,7 +230,7 @@
             
             
               
-                ubuntn 实用技巧
+                Linux 基础入门（二）
               
             
           </h1>
@@ -236,8 +242,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-11T09:21:34+08:00" content="2016-10-11">
-              2016-10-11
+            <time itemprop="dateCreated" datetime="2016-10-15T20:41:07+08:00" content="2016-10-15">
+              2016-10-15
             </time>
           </span>
 
@@ -266,8 +272,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/10/11/ubuntu-skill/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/10/11/ubuntu-skill/" itemprop="commentsCount"></span>
+                <a href="/2016/10/15/learn-how-to-use-linux-two/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/10/15/learn-how-to-use-linux-two/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -289,174 +295,24 @@
       
 
       
-        <p>总结积累常用的 ubuntn 技巧( 持续更新中 )：<br><a id="more"></a></p>
-<h1 id="桌面技巧"><a href="#桌面技巧" class="headerlink" title="桌面技巧"></a>桌面技巧</h1><table>
-<thead>
-<tr>
-<th style="text-align:center">快捷键</th>
-<th style="text-align:center">功能</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">ctrl+alt+T</td>
-<td style="text-align:center">直接打开终端</td>
-</tr>
-<tr>
-<td style="text-align:center">alt+F4</td>
-<td style="text-align:center">关闭当前窗口</td>
-</tr>
-<tr>
-<td style="text-align:center">super(保持)</td>
-<td style="text-align:center">打开启动器</td>
-</tr>
-<tr>
-<td style="text-align:center">super+tab</td>
-<td style="text-align:center">启动器中切换</td>
-</tr>
-<tr>
-<td style="text-align:center">super+1到9</td>
-<td style="text-align:center">直接打开</td>
-</tr>
-<tr>
-<td style="text-align:center">super+T</td>
-<td style="text-align:center">打开垃圾桶</td>
-</tr>
-<tr>
-<td style="text-align:center">super(轻触)</td>
-<td style="text-align:center">打开 dash 面板</td>
-</tr>
-<tr>
-<td style="text-align:center">ctrl+tab</td>
-<td style="text-align:center">切换</td>
-</tr>
-<tr>
-<td style="text-align:center">alt+tab</td>
-<td style="text-align:center">切换应用程序</td>
-</tr>
-<tr>
-<td style="text-align:center">alt+</td>
-<td style="text-align:center">切换当前应用程序窗口</td>
-</tr>
-<tr>
-<td style="text-align:center">super+w</td>
-<td style="text-align:center">展示所有窗口</td>
-</tr>
-</tbody>
-</table>
-<h1 id="终端技巧"><a href="#终端技巧" class="headerlink" title="终端技巧"></a>终端技巧</h1><table>
-<thead>
-<tr>
-<th style="text-align:center">快捷键</th>
-<th style="text-align:center">功能</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">cd { dirname }</td>
-<td style="text-align:center">进入某个文件夹</td>
-</tr>
-<tr>
-<td style="text-align:center">tab</td>
-<td style="text-align:center">自动补全</td>
-</tr>
-<tr>
-<td style="text-align:center">cd ..</td>
-<td style="text-align:center">返回上一层目录</td>
-</tr>
-<tr>
-<td style="text-align:center">xdg-open { file 或 URL }</td>
-<td style="text-align:center">用命令行打开相应的文件</td>
-</tr>
-<tr>
-<td style="text-align:center">ctrl+shift+N</td>
-<td style="text-align:center">在当前路径下新建一个终端，注意和 ctrl+alt+T 区别</td>
-</tr>
-<tr>
-<td style="text-align:center">ctrl+D</td>
-<td style="text-align:center">表示键盘输入或退出终端</td>
-</tr>
-<tr>
-<td style="text-align:center">exit</td>
-<td style="text-align:center">表示键盘输入或退出终端 ,和 alt+F4 不同</td>
-</tr>
-<tr>
-<td style="text-align:center">Ctrl+s</td>
-<td style="text-align:center">暂定当前程序，暂停后按下任意键恢复运行</td>
-</tr>
-<tr>
-<td style="text-align:center">Ctrl+z</td>
-<td style="text-align:center">将当前程序放到后台运行，恢复到前台为命令fg</td>
-</tr>
-<tr>
-<td style="text-align:center">Ctrl+a</td>
-<td style="text-align:center">将光标移至输入行头，相当于Home键</td>
-</tr>
-<tr>
-<td style="text-align:center">Ctrl+e</td>
-<td style="text-align:center">将光标移至输入行末，相当于End键</td>
-</tr>
-<tr>
-<td style="text-align:center">Ctrl+k</td>
-<td style="text-align:center">删除从光标所在位置到行末</td>
-</tr>
-<tr>
-<td style="text-align:center">Alt+Backspace</td>
-<td style="text-align:center">向前删除一个单词</td>
-</tr>
-<tr>
-<td style="text-align:center">Shift+PgUp</td>
-<td style="text-align:center">将终端显示向上滚动</td>
-</tr>
-<tr>
-<td style="text-align:center">Shift+PgDn</td>
-<td style="text-align:center">将终端显示向下滚动</td>
-</tr>
-<tr>
-<td style="text-align:center">man <command_name></command_name></td>
-<td style="text-align:center">Manual Page 获得命令的使用方式和说明</td>
-</tr>
-</tbody>
-</table>
-<p>Shell 常用通配符：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">字符</th>
-<th style="text-align:center">含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">*</td>
-<td style="text-align:center">匹配 0 或多个字符</td>
-</tr>
-<tr>
-<td style="text-align:center">?</td>
-<td style="text-align:center">匹配任意一个字符</td>
-</tr>
-<tr>
-<td style="text-align:center">[list]</td>
-<td style="text-align:center">匹配 list 中的任意单一字符</td>
-</tr>
-<tr>
-<td style="text-align:center">[!list]</td>
-<td style="text-align:center">匹配 除list 中的任意单一字符以外的字符</td>
-</tr>
-<tr>
-<td style="text-align:center">[c1-c2]</td>
-<td style="text-align:center">匹配 c1-c2 中的任意单一字符 如：[0-9] [a-z]</td>
-</tr>
-<tr>
-<td style="text-align:center">{string1,string2,…}</td>
-<td style="text-align:center">匹配 sring1 或 string2 (或更多)其一字符串</td>
-</tr>
-<tr>
-<td style="text-align:center">{c1..c2}</td>
-<td style="text-align:center">匹配 c1-c2 中全部字符 如{1..10}</td>
-</tr>
-</tbody>
-</table>
+        <p>本篇包括三部分：</p>
+<blockquote>
+<p>目录结构及文件基本操作<br>环境变量与文件查找<br>文件打包与解压缩</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><p>Linux 中一切皆文件。Linux 是以树形目录结构来构建整个系统的。本质上无论是目录结构还是操作系统内核都是存储在磁盘上的，但逻辑上来说 Linux 的磁盘是挂载在目录上的。每个目录不仅能使用本地磁盘分区的文件系统，也可以使用网络上的文件系统。</p>
+<p>Linux 下的目录结构是按照 FHS( Filesystem Hierarchy Standard ) 标准定义的。<br>FHS 定义了两层规范，第一层 <code>/</code> 下面的各个目录应该要放什么文件数据，例如 /etc 应该要放置设置文件，/bin 与 /sbin 则应该要放置可执行文件等等。<br>第二层则是针对 /usr 及 /var 这两个目录的子目录来定义。例如 /var/log 放置系统登录文件,/usr/share 放置共享数据等等。</p>
+<h2 id="目录路径"><a href="#目录路径" class="headerlink" title="目录路径"></a>目录路径</h2><p>cd 命令切换目录， <code>.</code> 表示当前目录, <code>..</code> 表示上一层目录 ( 目录本身也是文件)。<br>输入 <code>ls</code> 默认是隐藏的， <code>ls -a</code> 查看隐藏文件。<br><code>pwd</code> 获取当前路径<br><code>cd -</code> 上一次所在目录<br><code>cd ~</code>  当前用户家(主)目录</p>
+<p>绝对路径，以根目录 <code>/</code>  为起点进入所要到的目录，像这样 <code>/usr/local/bin</code><br>相对路径，以当前目录为起点，以当前目录为起点 <code>.</code>, 像这样 <code>usr/local/bin</code>(这里假设但前目录为根目录)<br>以当前用户的家目录为起点，两种方式进入特定路仅<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 绝对路径</span><br><span class="line">cd /usr/local/bin</span><br><span class="line"></span><br><span class="line">// 相对路径</span><br><span class="line">cd ../../user/local/bin</span><br></pre></td></tr></table></figure></p>
+<h2 id="基本文件操作"><a href="#基本文件操作" class="headerlink" title="基本文件操作"></a>基本文件操作</h2><p><code>touch filename</code> 创建文件<br><code>mkdir testdir</code> 创建目录<br><code>mkdir -p father/son/grandson</code>, <code>-p</code> 参数，同时创建父目录。<br><code>cp file path</code> 复制一个文件到特定的目录中。<br><code>cp -r dir path</code> 复制一个文件夹到特定目录<br><code>-r</code> 或 <code>-R</code> 表示递归复制<br><code>rm file</code> 删除一个文件<br><code>rm -f file</code> 表示强制删除<br><code>rm -r dir</code> 删除一个目录，也要加上 <code>-r</code> 参数。<br><code>mv file path</code>将特定文件移动(剪切)到特定的目录。<br><code>mv filename newfilename</code> 文件重命名<br><code>rename &#39;s/\.txt/\.c/&#39; *.txt</code> 批量重命名</p>
+<p><code>cat filename</code> 查看文件<br><code>cat -n filename</code> <code>-n</code>  参数显示行号<br><code>less</code> <code>more</code> 命令分页查看文件<br><code>head</code> <code>tail</code>  查看头/尾行，默认显示 10 行</p>
+<p><code>file filename</code> 查看文件类型, Linux 中不以文件后缀判断文件类型.</p>
+<h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><p>环境变量就是作用域比自定义变量要大。简单理解，若在子进程中有效，则为环境变量，否则不是。</p>
+<p>为了和普通变量区分，通常我们习惯将环境变量名设为大写。</p>
+<h2 id="搜索文件"><a href="#搜索文件" class="headerlink" title="搜索文件"></a>搜索文件</h2><p><code>whereis who</code><br>简单快速，只能搜索二进制文件(-b),man帮助文件(-m)和源代码文件(-s)<br><code>locate /etc/sh</code><br>快而全<br><code>which</code><br>小而精，只从 PATH 环境变量指定的路径中去搜索命令<br><code>find</code><br>精而细</p>
+<h2 id="文件打包和解压缩"><a href="#文件打包和解压缩" class="headerlink" title="文件打包和解压缩"></a>文件打包和解压缩</h2><p>常见的方式有 <code>zip</code>, <code>rar</code>, <code>tar</code>  三种 。<br>以 tar 为例，tar 本身只打包不压缩<br><code>tar -cf test.tar ~</code>   创建一个包<br><code>tar -xf test.tar -C tardir</code>    解一个包到 tardir 目录中</p>
+<p><code>tar -czf test.tar.gz ~</code>   创建一个包,并用 <code>gzip</code> 来压缩文件<br><code>tar -xzf test.tar.gz -C tardir</code>    解一个包到 tardir 目录中</p>
+<p>( 完 )</p>
 
       
     </div>
@@ -471,7 +327,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/ubuntu/" rel="tag">#ubuntu</a>
+            <a href="/tags/linux/" rel="tag">#linux</a>
           
         </div>
       
@@ -480,17 +336,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/10/10/data-structure-of-graph/" rel="next" title="数据结构--图">
-                <i class="fa fa-chevron-left"></i> 数据结构--图
+              <a href="/2016/10/12/learn-how-to-use-linux-one/" rel="next" title="Linux 基础入门（一）">
+                <i class="fa fa-chevron-left"></i> Linux 基础入门（一）
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/10/12/learn-how-to-use-linux-one/" rel="prev" title="Linux 基础入门（一）">
-                Linux 基础入门（一） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -634,7 +486,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#桌面技巧"><span class="nav-number">1.</span> <span class="nav-text">桌面技巧</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#终端技巧"><span class="nav-number">2.</span> <span class="nav-text">终端技巧</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#目录结构"><span class="nav-number">1.</span> <span class="nav-text">目录结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目录路径"><span class="nav-number">2.</span> <span class="nav-text">目录路径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本文件操作"><span class="nav-number">3.</span> <span class="nav-text">基本文件操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环境变量"><span class="nav-number">4.</span> <span class="nav-text">环境变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搜索文件"><span class="nav-number">5.</span> <span class="nav-text">搜索文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件打包和解压缩"><span class="nav-number">6.</span> <span class="nav-text">文件打包和解压缩</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -909,9 +761,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'jarbinup';
-      var disqus_identifier = '2016/10/11/ubuntu-skill/';
-      var disqus_title = 'ubuntn 实用技巧';
-      var disqus_url = 'http://yoursite.com/2016/10/11/ubuntu-skill/';
+      var disqus_identifier = '2016/10/15/learn-how-to-use-linux-two/';
+      var disqus_title = 'Linux 基础入门（二）';
+      var disqus_url = 'http://yoursite.com/2016/10/15/learn-how-to-use-linux-two/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
