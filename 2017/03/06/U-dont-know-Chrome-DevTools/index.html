@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="数据结构,MOOC," />
+  <meta name="keywords" content="chrome," />
 
 
 
@@ -57,16 +57,16 @@
 
 
 
-<meta name="description" content="中国大学MOOC 《数据结构》 陈越、何钦铭 课堂笔记">
+<meta name="description" content="Device panelDevide type / EditDPRNetwork throttlingMedia query">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据结构--图">
-<meta property="og:url" content="http://yoursite.com/2016/10/10/data-structure-of-graph/index.html">
+<meta property="og:title" content="U dont know Chrome DevTools">
+<meta property="og:url" content="http://yoursite.com/2017/03/06/U-dont-know-Chrome-DevTools/index.html">
 <meta property="og:site_name" content="promised land">
-<meta property="og:description" content="中国大学MOOC 《数据结构》 陈越、何钦铭 课堂笔记">
-<meta property="og:updated_time" content="2016-10-11T01:17:41.308Z">
+<meta property="og:description" content="Device panelDevide type / EditDPRNetwork throttlingMedia query">
+<meta property="og:updated_time" content="2017-03-06T03:52:16.813Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据结构--图">
-<meta name="twitter:description" content="中国大学MOOC 《数据结构》 陈越、何钦铭 课堂笔记">
+<meta name="twitter:title" content="U dont know Chrome DevTools">
+<meta name="twitter:description" content="Device panelDevide type / EditDPRNetwork throttlingMedia query">
 
 
 
@@ -84,7 +84,7 @@
   };
 </script>
 
-  <title> 数据结构--图 | promised land </title>
+  <title> U dont know Chrome DevTools | promised land </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -224,7 +224,7 @@
             
             
               
-                数据结构--图
+                U dont know Chrome DevTools
               
             
           </h1>
@@ -236,8 +236,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-10T16:26:12+08:00" content="2016-10-10">
-              2016-10-10
+            <time itemprop="dateCreated" datetime="2017-03-06T11:42:33+08:00" content="2017-03-06">
+              2017-03-06
             </time>
           </span>
 
@@ -250,8 +250,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/basic/" itemprop="url" rel="index">
-                    <span itemprop="name">basic</span>
+                  <a href="/categories/fed/" itemprop="url" rel="index">
+                    <span itemprop="name">fed</span>
                   </a>
                 </span>
 
@@ -266,8 +266,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/10/10/data-structure-of-graph/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/10/10/data-structure-of-graph/" itemprop="commentsCount"></span>
+                <a href="/2017/03/06/U-dont-know-Chrome-DevTools/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/06/U-dont-know-Chrome-DevTools/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -289,37 +289,32 @@
       
 
       
-        <blockquote>
-<p>中国大学MOOC <a href="http://www.icourse163.org/learn/ZJU-93001#/learn/announce" target="_blank" rel="external"><strong>《数据结构》</strong> 陈越、何钦铭</a> 课堂笔记</p>
-</blockquote>
+        <h2 id="Device-panel"><a href="#Device-panel" class="headerlink" title="Device panel"></a>Device panel</h2><p>Devide type / Edit<br>DPR<br>Network throttling<br>Media query</p>
 <a id="more"></a>
-<h2 id="什么是图"><a href="#什么是图" class="headerlink" title="什么是图"></a>什么是图</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>表示 “多对多” 的关系D<br>包含：<br>一组顶点：通常用 V [ Vertex ] 表示顶点集合<br>一组边： 通常用 E [ Edge ] 表示边的集合<br>  其中边是顶点对： (v, w) 是一条边（双向边），属于 E ,其中 v, w 属于 V .<br>  有向边 <v, w=""> 表示从 v 指向 w 的边(单行线，带箭头)，<br>  边中不考虑重边( 如果是无向边我们只认为有一条，不会有很多条 )和自回路( 如果为有向边，一定是从一个顶点指向另一个顶点 )。</v,></p>
-<p>将线性结构[ 一对一 ]和树[ 一对多 ]包含在其中</p>
-<h3 id="抽象数据类型定义："><a href="#抽象数据类型定义：" class="headerlink" title="抽象数据类型定义："></a>抽象数据类型定义：</h3><pre><code>类型名称： 图 Graph
-数据对象集(有什么组成的)： G(V, E) 由一个**非空的**有限顶点集合 V 和一个有限边集合 E 组成;
-操作集：对于任意图 G 属于 Graph, 以及 v 属于 V , e 属于 E ; 
-a. Graph Create(): 建立空图;
-b. Graph InsertVertex( Graph G, Vertex v): 将 v 插入 G ;
-b. Graph InsertEdge( Graph G, Edge e): 将 e 插入 G ;
-c. DFS( Graph G, Vertex v ): 从顶点 v 出发深度优先遍历图 G ;
-c. BFS( Graph G, Vertex v ): 从顶点 v 出发广度优先遍历图 G ;
-d. ShortestPath( Graph G, Vertex v, int Dist[] ): 计算图 G 顶点 v 到任意其他顶点的最短距离;
-e. MST( Graph G ): 计算图 G 的最小生成树;
-</code></pre><h3 id="关于图的常见术语："><a href="#关于图的常见术语：" class="headerlink" title="关于图的常见术语："></a>关于图的常见术语：</h3><p>无向图： 一个图中的所有边都是无向边<br>有向图： 一个图中的边，有可能是单向的，有可能是双向的。方向对它是很重要的<br>网络： 如果图中的每条边带权重，叫做网络。</p>
-<h3 id="如何在程序中表示一个图："><a href="#如何在程序中表示一个图：" class="headerlink" title="如何在程序中表示一个图："></a>如何在程序中表示一个图：</h3><ol>
-<li>邻接矩阵 G[N][N] 表示 ， G[i][j] 为 1, <code>&lt;vi, vj&gt;</code> 是 G 中的边; 为 0 没有边<br>对于无向图的存储，使用长度为 N(N+1)/2 的1维数组 A 存储 {G00, G10, G11, …, Gn-1 0, …, Gn-1 n-1}, Gij 在A中对应的下标是： ( i*(i+1)/2 + j )。<br>对于网络，只要把G[i][j] 的值定义为边<code>&lt;vi, vj&gt;</code>的权重即可。</li>
-<li>邻接表： G[N] 为指针数组，对应矩阵每行一个链表，只存非 0 元素。</li>
-</ol>
-<h2 id="图的遍历"><a href="#图的遍历" class="headerlink" title="图的遍历"></a>图的遍历</h2><h3 id="深度优先搜索-DFS"><a href="#深度优先搜索-DFS" class="headerlink" title="深度优先搜索 DFS"></a>深度优先搜索 DFS</h3><p>类似于树的先序遍历<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">void DFS( Vertex V ) &#123;</span><br><span class="line">    visited[ V ] = true;</span><br><span class="line">    for( V 的每个邻接点 W )</span><br><span class="line">        if( !visited[ W ] )</span><br><span class="line">            DFS( W );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>若有 N 个顶点， E 条边，时间复杂度为：</p>
+<h2 id="Element-panel"><a href="#Element-panel" class="headerlink" title="Element panel"></a>Element panel</h2><h3 id="检查和调整页面"><a href="#检查和调整页面" class="headerlink" title="检查和调整页面"></a>检查和调整页面</h3><p>Live-edit a DOM node<br>Live-edit a style<br>Examine and edit box model parameters<br>view local change<br>undo changes</p>
+<h3 id="编辑样式"><a href="#编辑样式" class="headerlink" title="编辑样式"></a>编辑样式</h3><p>Inspect styles applied to an element<br>Inspect elements affected by a selector<br>Add, enable, and disable CSS classes(fliter)<br>编辑值</p>
 <blockquote>
-<p>用邻接表存储图： 有O( N+E )<br>用邻接矩阵存储图： 有 O(N^2)</p>
+<p>alt + up / down 0.1<br>up / down 1<br>shift + up / down 10<br>shift Pageup/Pagedown 100</p>
 </blockquote>
-<h3 id="广度优先搜索-BFS"><a href="#广度优先搜索-BFS" class="headerlink" title="广度优先搜索 BFS"></a>广度优先搜索 BFS</h3><p>类似于树的层序遍历<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">void BFS( Vertex V )&#123;</span><br><span class="line">    visited[V] = true;</span><br><span class="line">    // 首先将初始的节点入队</span><br><span class="line">    Enqueue(V, Q);</span><br><span class="line">    while( !IsEmpty( Q ) )&#123;</span><br><span class="line">        // 每次循环从队列中弹出一个节点</span><br><span class="line">        V = Dequeue( Q );</span><br><span class="line">        for( V 的每个邻接点 W )</span><br><span class="line">            if( !visited[W] )&#123;</span><br><span class="line">                visited[W] = true;</span><br><span class="line">                Enqueue(W, Q);</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>若有 N 个顶点， E 条边，时间复杂度为：</p>
+<p>add a style rule<br>add or remove dynamic styles<br>Add background-color or color to a style rule<br>Modify colors with the Color Picker</p>
+<h3 id="编辑-DOM"><a href="#编辑-DOM" class="headerlink" title="编辑 DOM"></a>编辑 DOM</h3><p>F2 to edit<br>ctrl + enter to save<br>esc to exit without saving</p>
+<p>set dom breakpoints<br>interact with dom breakpoints<br>view element event listeners</p>
+<h3 id="Inspect-animations"><a href="#Inspect-animations" class="headerlink" title="Inspect animations"></a>Inspect animations</h3><p><a href="https://daneden.github.io/animate.css" target="_blank" rel="external">https://daneden.github.io/animate.css</a></p>
+<h2 id="console-panel"><a href="#console-panel" class="headerlink" title="console panel"></a>console panel</h2><h3 id="console-history"><a href="#console-history" class="headerlink" title="console history"></a>console history</h3><h4 id="clear-history"><a href="#clear-history" class="headerlink" title="clear history"></a>clear history</h4><p>clean console ctrl + L<br>clearing the history <code>clear()</code> and <code>console.clear()</code> in code</p>
+<h4 id="Persisting-the-history"><a href="#Persisting-the-history" class="headerlink" title="Persisting the history"></a>Persisting the history</h4><p>选中 preserve log 在某次页面未关闭或刷新之前保留 log</p>
+<h4 id="saving-the-history"><a href="#saving-the-history" class="headerlink" title="saving the history"></a>saving the history</h4><p>save log as a file</p>
+<h3 id="selecting-execution-context"><a href="#selecting-execution-context" class="headerlink" title="selecting execution context"></a>selecting execution context</h3><p>usually see the top , meaning the top frame of th page</p>
+<h3 id="Flitering-the-console-output"><a href="#Flitering-the-console-output" class="headerlink" title="Flitering the console output"></a>Flitering the console output</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log() </span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"%cThis will be formatted with large, blue text"</span>, <span class="string">"color: blue; font-size: x-large"</span>)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"%s has %d points"</span>, <span class="string">"Sam"</span>, <span class="number">100</span>);</span><br><span class="line"><span class="built_in">console</span>.error() </span><br><span class="line"><span class="built_in">console</span>.info() </span><br><span class="line"><span class="built_in">console</span>.warn() </span><br><span class="line"><span class="built_in">console</span>.time(<span class="string">'time duration'</span>) </span><br><span class="line"><span class="keyword">var</span> array= <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">1000000</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = array.length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">    <span class="built_in">console</span>.count(<span class="string">'count'</span>, i)</span><br><span class="line">    array[i] = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.timeEnd(<span class="string">'time duration'</span>) </span><br><span class="line"><span class="built_in">console</span>.debug() </span><br><span class="line"><span class="built_in">console</span>.assert(<span class="number">501</span>&lt;<span class="number">500</span>, <span class="string">"Node count is &gt; 500"</span>); 断言</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.table([&#123;a:<span class="number">1</span>, b:<span class="number">2</span>, c:<span class="number">3</span>&#125;, &#123;a:<span class="string">"foo"</span>, b:<span class="literal">false</span>, c:<span class="literal">undefined</span>&#125;]);</span><br><span class="line"><span class="built_in">console</span>.table([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>], [<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]]);</span><br></pre></td></tr></table></figure>
+<h2 id="Sources-panel"><a href="#Sources-panel" class="headerlink" title="Sources panel"></a>Sources panel</h2><h3 id="run-snippets-of-code-from-any-page"><a href="#run-snippets-of-code-from-any-page" class="headerlink" title="run snippets of code from any page"></a>run snippets of code from any page</h3><h3 id="Sources-panel-1"><a href="#Sources-panel-1" class="headerlink" title="Sources panel"></a>Sources panel</h3><h2 id="Application-panel"><a href="#Application-panel" class="headerlink" title="Application panel"></a>Application panel</h2><h3 id="what-is-a-Mainfest"><a href="#what-is-a-Mainfest" class="headerlink" title="what is a Mainfest"></a>what is a Mainfest</h3><h3 id="what-is-a-service-Worker"><a href="#what-is-a-service-Worker" class="headerlink" title="what is a service Worker"></a>what is a service Worker</h3><h3 id="what-is-a-localstorage"><a href="#what-is-a-localstorage" class="headerlink" title="what is a localstorage"></a>what is a localstorage</h3><h3 id="what-is-a-sessionstorage"><a href="#what-is-a-sessionstorage" class="headerlink" title="what is a sessionstorage"></a>what is a sessionstorage</h3><h3 id="what-is-a-cookies"><a href="#what-is-a-cookies" class="headerlink" title="what is a cookies"></a>what is a cookies</h3><h3 id="what-are-IndexDB-and-web-SQL"><a href="#what-are-IndexDB-and-web-SQL" class="headerlink" title="what are IndexDB and web SQL"></a>what are IndexDB and web SQL</h3><h2 id="Security"><a href="#Security" class="headerlink" title="Security"></a>Security</h2><ul>
+<li>to instantly find out whether the current page is secure or non-secure.</li>
+<li>view connection and certificate details</li>
+<li><p>change the DevTools UI ctrl shift p</p>
+<p>Reference</p>
 <blockquote>
-<p>用邻接表存储图： 有O( N+E )<br>用邻接矩阵存储图： 有 O(N^2)</p>
+<p><a href="https://developers.google.com/web/tools/chrome-devtools/" target="_blank" rel="external">https://developers.google.com/web/tools/chrome-devtools/</a></p>
 </blockquote>
+</li>
+</ul>
 
       
     </div>
@@ -334,9 +329,7 @@ e. MST( Graph G ): 计算图 G 的最小生成树;
       
         <div class="post-tags">
           
-            <a href="/tags/数据结构/" rel="tag">#数据结构</a>
-          
-            <a href="/tags/MOOC/" rel="tag">#MOOC</a>
+            <a href="/tags/chrome/" rel="tag">#chrome</a>
           
         </div>
       
@@ -345,17 +338,13 @@ e. MST( Graph G ): 计算图 G 的最小生成树;
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/10/03/using-cors/" rel="next" title="Using CORS (使用跨域资源共享)">
-                <i class="fa fa-chevron-left"></i> Using CORS (使用跨域资源共享)
+              <a href="/2016/10/15/learn-how-to-use-linux-two/" rel="next" title="Linux 基础入门（二）">
+                <i class="fa fa-chevron-left"></i> Linux 基础入门（二）
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/10/11/ubuntu-skill/" rel="prev" title="ubuntn 实用技巧">
-                ubuntn 实用技巧 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -499,7 +488,7 @@ e. MST( Graph G ): 计算图 G 的最小生成树;
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是图"><span class="nav-number">1.</span> <span class="nav-text">什么是图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">1.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#抽象数据类型定义："><span class="nav-number">1.2.</span> <span class="nav-text">抽象数据类型定义：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于图的常见术语："><span class="nav-number">1.3.</span> <span class="nav-text">关于图的常见术语：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何在程序中表示一个图："><span class="nav-number">1.4.</span> <span class="nav-text">如何在程序中表示一个图：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图的遍历"><span class="nav-number">2.</span> <span class="nav-text">图的遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#深度优先搜索-DFS"><span class="nav-number">2.1.</span> <span class="nav-text">深度优先搜索 DFS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#广度优先搜索-BFS"><span class="nav-number">2.2.</span> <span class="nav-text">广度优先搜索 BFS</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Device-panel"><span class="nav-number">1.</span> <span class="nav-text">Device panel</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Element-panel"><span class="nav-number">2.</span> <span class="nav-text">Element panel</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#检查和调整页面"><span class="nav-number">2.1.</span> <span class="nav-text">检查和调整页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编辑样式"><span class="nav-number">2.2.</span> <span class="nav-text">编辑样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编辑-DOM"><span class="nav-number">2.3.</span> <span class="nav-text">编辑 DOM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Inspect-animations"><span class="nav-number">2.4.</span> <span class="nav-text">Inspect animations</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#console-panel"><span class="nav-number">3.</span> <span class="nav-text">console panel</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#console-history"><span class="nav-number">3.1.</span> <span class="nav-text">console history</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#clear-history"><span class="nav-number">3.1.1.</span> <span class="nav-text">clear history</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Persisting-the-history"><span class="nav-number">3.1.2.</span> <span class="nav-text">Persisting the history</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#saving-the-history"><span class="nav-number">3.1.3.</span> <span class="nav-text">saving the history</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#selecting-execution-context"><span class="nav-number">3.2.</span> <span class="nav-text">selecting execution context</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Flitering-the-console-output"><span class="nav-number">3.3.</span> <span class="nav-text">Flitering the console output</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sources-panel"><span class="nav-number">4.</span> <span class="nav-text">Sources panel</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#run-snippets-of-code-from-any-page"><span class="nav-number">4.1.</span> <span class="nav-text">run snippets of code from any page</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sources-panel-1"><span class="nav-number">4.2.</span> <span class="nav-text">Sources panel</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Application-panel"><span class="nav-number">5.</span> <span class="nav-text">Application panel</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#what-is-a-Mainfest"><span class="nav-number">5.1.</span> <span class="nav-text">what is a Mainfest</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#what-is-a-service-Worker"><span class="nav-number">5.2.</span> <span class="nav-text">what is a service Worker</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#what-is-a-localstorage"><span class="nav-number">5.3.</span> <span class="nav-text">what is a localstorage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#what-is-a-sessionstorage"><span class="nav-number">5.4.</span> <span class="nav-text">what is a sessionstorage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#what-is-a-cookies"><span class="nav-number">5.5.</span> <span class="nav-text">what is a cookies</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#what-are-IndexDB-and-web-SQL"><span class="nav-number">5.6.</span> <span class="nav-text">what are IndexDB and web SQL</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Security"><span class="nav-number">6.</span> <span class="nav-text">Security</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -774,9 +763,9 @@ e. MST( Graph G ): 计算图 G 的最小生成树;
 
     <script type="text/javascript">
       var disqus_shortname = 'jarbinup';
-      var disqus_identifier = '2016/10/10/data-structure-of-graph/';
-      var disqus_title = '数据结构--图';
-      var disqus_url = 'http://yoursite.com/2016/10/10/data-structure-of-graph/';
+      var disqus_identifier = '2017/03/06/U-dont-know-Chrome-DevTools/';
+      var disqus_title = 'U dont know Chrome DevTools';
+      var disqus_url = 'http://yoursite.com/2017/03/06/U-dont-know-Chrome-DevTools/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
